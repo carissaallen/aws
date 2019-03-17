@@ -275,8 +275,40 @@ Update your EC2 instance with the latest security patches.
 ### Design for Failure
 Have one instance in each availability zone.
 
+## Command Line
+SSH into your EC2 instance 
+`ssh ec2-user@3.81.122.72` 
 
-'
+`aws configure` to configure credentials:
+AWS Access Key ID: (from the _credentials.csv_ file)
+Aws Secret Access Key: (from the _credentials.csv_ file) 
+_Note: Someone can obtain control of your AWS account with this information._
+
+aws [service] [make bucket] [bucket name]
+`aws s3 mb s3://carissaallen` 
+
+### .aws
+Contains _config_ and _credentials_ files. 
+
+### Roles
+- More secure than using access key IDs and secret access keys
+- Policies are effective immediately
+- Can apply roles to EC2 instances anytime
+- Roles are universal (no need to specify what region they are in, similar to users)
+
+### Build a Web Server
+Install Apache
+`yum install httpd`
+
+Start the Service
+`service httpd start`
+
+Navigate to:
+`cd /var/www/html/`
+
+Create an _index.html_ file to create your website. 
+
+To view the web server, paste your IP address into the web browser. Voila!
 
 
 
