@@ -310,6 +310,77 @@ Create an _index.html_ file to create your website.
 
 To view the web server, paste your IP address into the web browser. Voila!
 
+## Load Balancers
+- Application Load Balancers: Layer 7 Aware (Make Intelligent Decisions)
+- Network Load Balancers: Extreme Performance/Static IP Addresses 
+- Classic Load Balancers: Test & Dev, Keep Costs Low
+
+## Databases 
+### Relational Databases
+- Relational databases: think of a traditional spreadsheet!
+- On AWS: it's called RDS
+	- multiple Availability Zones for disaster recovery
+	- read replicas (copies of your production database) for performance
+
+#### How It Connects
+Your EC2 instance points to a DNS, or connection, string (e.g., myexampledb.alb2c3d4wxyz.us-west-2.rds.amazonaws.com) which points to your primary database in AZ 1 and a secondary database in AZ 2.
+
+You can set it up so your EC2 instances do their writes to your primary database, and all their reads from the read replica (up to 5 copies!).
+
+#### Non Relationl Databases
+- Collection = Table
+- Document = Row
+- Key Value Pairs:
+
+```
+{ 
+"_id":#1235353",
+"name":"Samson",
+"nickname":"Sammy",
+"age":"6",
+"address":[
+{"street":"21 Jump Street",
+"suburb":"Pearl"}
+  ]
+}
+```
+
+Provides flexibility. 
+	- Can add columns without impacting all rows.
+
+Amazon's Non Relational Database is called **DynamoDB**. 
+
+#### OLTP vs. OLAP
+- Online Transaction Processing (OLTP)
+- Online Analytics Processing (OLAP)
+- Differes in terms of the types of queries you will run
+
+OLTP Example:
+Query Order No. 2120121
+Returns the row of data: Name, Date, Delivery Address, Delivery Status
+(Inserts or retrieves a row in the database)
+
+OLAP Example:
+Query net profit for EMEA and Pacific for the Digital Radio Product. 
+(Pulls in large numbers of records.)
+
+Data Warehousing allows you to do this away from your database. They use a different architecture.
+Amazon's Data Warehouse solution is called _Redshift_.
+
+#### ElastiCache
+_A caching engine in the cloud for your most common queries; will take a big load off your production databases because they are querying ElastiCache instead of your production databases._
+
+A web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud.
+Improves performance of web applications by allowing you to retrieve information from fast, managed, in-memory cahches, instead of relying entirely on slower disk-based databases. 
+
+You don't want web servers querying the same information over and over again. So it queries ElastiCache (holding most common queries) to improve performance.
+ 
+Supports two open source in-memory caching engines:
+	- Memchached
+	- Redis
+
+
+
 
 
 
