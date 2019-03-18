@@ -52,5 +52,14 @@ An online resource to help you reduce cost, increase performance, and improve se
 Increases visibility into your user and resource activity by recording AWS Management Console actions and API calls. 
 	- You can identify which users and accounts called AWS, the source IP address from which the calls were made, and when the calls occurred.
 	
-
-
+## Quiz Answers
+- [Compliance Programs](https://aws.amazon.com/compliance/programs/)
+- Trusted Advisor helps you optimize your entire AWS environment in real time following AWS best practices. It helps you optimize cost, fault-tolerance, and more.
+- AWS Inspector assesses the security and compliance of your EC2 instances.
+- A PCI DSS Level 1 certification attests to the security of the AWS platform regarding credit card transactions.
+- WAF operates down to Layer 7.
+- AWS Shield is AWS' managed DDoS protection service.
+- AWS Trusted Advisor can help you assess the fault-tolerance of your AWS environment.
+- It's safer to use IAM roles than it is to use Access Keys.
+- Only AWS Shield Advanced offers automated application layer monitoring.
+ 
