@@ -57,7 +57,7 @@ _What determines price for Glacier?_
 * Storage
 * Data retrieval times
 
-**Snowball**
+**Snowball** <br>
 A PB-scale _data transport solution_ that uses secure applicances to transfer large amounts of data into and out of the AWS cloud.
 
 Think of it as a gigantic disk to move your data into AWS.
