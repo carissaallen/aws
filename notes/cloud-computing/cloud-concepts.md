@@ -114,34 +114,34 @@ _Boto 3 [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/
 
 - IAM roles allow you to delegate access with defined permissions to trusted entities without having to share long-term access keys. You can use IAM roles to delegate access to IAM users managed within your account, to IAM users under a different AWS account, or to an AWS service such as EC2.
 
-## S3
-S3: Simple Storage Service
-	- A place to put your flat files (flat file: a file that doesn't change).
-	- Object-based storage; allows you to upload files
-	- Files 0 Bytes to 5 TB
-	- There is unlimited storage
-	- Files are sotred in Buckets (bucket must be a unique name globally)
-	- S3 is a universal namespace (that is, names must be unique globally)
-	- ex: https://s3-eu-west-1.amazonaws.com/acloudguru
-	- Receive a HTTP 200 response code if upload was successful
+## Simple Storage Service [_(S3)_](https://aws.amazon.com/s3/)
+_Storage_ 
+* A place to put your _flat files_ (static media)
+* Object-based storage; allows you to upload files
+* Files 0 Bytes to 5 TB
+* There is unlimited storage
+* Files are stored in _buckets_ (the bucket must have a unique name globally)
+* S3 is a universal namespace (that is, names must be unique globally)
+* Example bucket name: https://s3-eu-west-1.amazonaws.com/acloudguru
+* Receive a HTTP 200 response code if upload was successful
 
-S3 Object: think of Objects just as files.
-	- Objects consist of:
-		- Key: the name of the object
-		- Value: the data, made up of a sequence of bytes
-		- Version ID 
-		- Metadata (data about the data you are storing)
-		- Subresources
-			- Access Control Lists
-			- Torrent	
+### S3 Object (think of Objects as files)
+Objects consist of:
+  * Key: the name of the object
+  * Value: the data, made up of a sequence of bytes
+  * Version ID
+  * Metadata (data about the data you are storing)
+  * Subresources
+    * Access Control Lists
+    * Torrent	
 			
 ### Data Consistency for S3
 1. Read after Write consistency 
-	- PUTs of new Objects:
-		- If you write a new file (putting a new file in S3) and read it immediately afterwards, you will be able to view the data immediately.
-	- Overwrite PUTs (update an existing file, or delete a file)
+	- PUT a new Object 
+		- If you write a new file (PUT a new file in S3) and read it immediately afterwards, you will be able to view the data immediately
+	- Overwrite a PUT (update an existing file or delete a file)
 		- When you read the file, you may get the older version
-		- Changes to objects can take some time to propagate
+		- Changes to existing objects can take some time to propagate
 
 ### Features
 - Tiered Storage Available
@@ -165,6 +165,7 @@ S3 Object: think of Objects just as files.
 	- lowest-cost storage class, where a retrieval time of 12 hours is acceptable
 
 ### Pricing
+Based on...
 - Storage
 - Requests
 - Storage Management Pricing
@@ -174,9 +175,9 @@ S3 Object: think of Objects just as files.
 - Cross Region Replication Pricing
 	- replicates file to a secondary bucket so you have disaster recovery
 
-### Created an S3 bucket: Tips
+### Creating an S3 bucket: Tips
 - Bucket names share a common name space; you cannot have the same bucket name as someone else
-- When you view your buckets, you vie them globally but you can have buckets in individual regions
+- When you view your buckets, you view them globally, but you can have buckets in individual regions
 - You can replicate the contents of one bucket to another bucket automatically using Cross Region Replication
 - You can change the storage class and encryption on the fly 
 	- S3 Standard
