@@ -16,13 +16,15 @@ Six advantages of cloud computing:
 6. Go global in minutes
 	- lower latency and better experience for customers
 
-### Types of Cloud Computing: 
-1. Infrastructure As A Service (IAAS)<br>
+### Types of Cloud Computing [_(Cloud Computing Models)_](https://aws.amazon.com/types-of-cloud-computing/)
+1. Infrastructure As A Service (IaaS)<br>
 You manage a physical or virtual server; the data center provider will have no access to your server.
-2. Platform As A Service (PAAS)<br>
-Someone else manages the underlying hardware and operating systems; you do not have to worry about security patching, updates, maintenance, etc. (ex: Elastic Beanstalk)
-3. Software As A Service (SAAS)<br>
-You only worry about the software, while someone else takes care of the data centers, servers, networks, storage, maintenance, patching, etc. (ex: Gmail)
+2. Platform As A Service (PaaS)<br>
+Someone else manages the underlying infrastructure (usually hardware and operating systems); you do not have to worry about security patching, updates, maintenance, etc. You only focus on the deployment and management of your applications.<br>
+Example: _Elastic Beanstalk_
+3. Software As A Service (SaaS)<br>
+Typically referring to end-user applications. You do not have to think about how the service is maintained or how the underlying infrastructure is managed (someone else takes care of the data centers, servers, networks, storage, maintenance, patching, etc.); you only need to think about how you will use that particular piece software.<br>
+Example: _A web-based email, where you can send and receive email without having to manage feature additions to the email product or maintaining the servers and operating systems that the email program is running on._
 
 ### 3 Types of Cloud Computing Deloyments:
 - Public Cloud (AWS, Azure, GCP)
