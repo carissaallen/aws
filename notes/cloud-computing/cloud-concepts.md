@@ -207,26 +207,25 @@ A **Content Delivery Network (CDN)** is a system of distributed servers that del
 You can clear your cached objects, but you will be charged for doing that.
 
 _Example:_ 
-We have our origin in London (this is our S3 bucket containing our files). The users query the file (do you [Edge Location] have a copy of this file?). The Edge Location will not have the file upon this first query, and there will be added latency for this user. The Edge Location will connect to the origin and download the file, then stream it to the user. 
+We have our origin in London (this is our S3 bucket containing our files). The users query the file (do you [Edge Location] have a copy of this file?). The Edge Location will not have the file upon this first query, and there will be added latency for this user. The Edge Location will connect to the origin and download the file, then stream it to the user. <br>
 When the second user queries the same file, that file is already cached at the Edge Location, so the second user doesn't have to download it from the origin. They can get it from an Edge Location nearest them.
 
 ## EC2 [_(Elastic Compute Cloud)_](https://aws.amazon.com/ec2/)
 A virtual server (or servers) in the cloud.
-	- Reduces the time to obtain and boot new server instances to minutes,
-	  allowing you to quickly scale capacity (up and down) as your computing requirements change
+* Reduces the time to obtain and boot new server instances to minutes, allowing you to quickly scale capacity (up and down) as your computing requirements change.
 
 ### Pricing Models
 **On Demand**
-	- Allows you to pay a fixed rate by the hour (or by the second) with no commitment
+	* Allows you to pay a fixed rate by the hour (or by the second) with no commitment
 **Reserved**
-	- Provides a capacity reservation, and offer a significant discount on thehourly charge for an instance
-	- Contract terms are 1 year or 3 year terms
+	* Provides a capacity reservation, and offers a significant discount on the hourly charge for an instance
+	* Contract terms are 1 or 3 year terms
 **Spot**
-	- Enables you to bid whatever price you want for instance capacity
-	- Provides for even greater savings if your applicans have flexible start/end times
+	* Enables you to bid whatever price you want for instance capacity
+	* Provides for even greater savings if your applicans have flexible start/end times
 **Dedicated Hosts**
-	- Physical EC2 server dedicated for your use
-	- Helps reduce costs by allowing you to use your existing server-bound software licenses
+	* Physical EC2 server dedicated for your use
+	* Helps reduce costs by allowing you to use your existing server-bound software licenses
 
 ### EC2 Instance Types
 Fight Dr. McPxz 
@@ -237,20 +236,20 @@ H - High Disk Throughput
 T - Cheap general purpose (think T2 Micro)
 D - Density
 R - RAM
-M - Main choice for general pupose apps
+M - Main choice for general purpose apps
 C - Compute
 P - Graphics (think Pictures)
 X - Extreme Memory
 Z - Extreme Memory and CPU
 
 ### EBS
-_A virtual disk in the cloud that the virtual servers run off._
+_A virtual disk in the cloud that the virtual servers run off of._
 
-Allows you to create storage volumes and attach them to EC3 instances. Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use a block device. 
+Allows you to create storage volumes and attach them to EC3 instances. Once attached, you can create a file system on top of those volumes, run a database, or use them in any other way you would use a block device. 
 
 Placed in an Availability Zone (same one as the EC2 instance), where they are automatically replicated for protection from the failure of a single component.
 
-Types (of virutal disks in the cloud):
+Types (of virtual disks in the cloud):
 1. SSD
 	- General Purpose SSD (GP2)
 	- Provisioned IOPS SSD (IO1) 
