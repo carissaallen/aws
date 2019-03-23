@@ -4,7 +4,7 @@ Cloud computing: on-demand delivery of compute, database storage, applications, 
 Six advantages of cloud computing:
 1. Trade capital expense for variable expense
 	- not invested in data centers and servers before you know how you're going to use them 
-	- paying only for actual consumption of resources
+	- only paying for _actual_ consumption of resources
 2. Benefit from massive economies of scale
 	- Amazon has a larger purchasing power (they build their own servers!)
 3. Not guessing about capacity
@@ -17,9 +17,12 @@ Six advantages of cloud computing:
 	- lower latency and better experience for customers
 
 ### Types of Cloud Computing: 
-1. Infrastructure As A Service (IAAS): you manage a physical or virtual server; the data center provider will have no access to your server.
-2. Platform As A Service (PAAS): someone else manages the underlying hardware and operating systems; you do not have to worry about security patching, updates, maintenance, etc. (ex: Elastic Beanstalk)
-3. Software As A Service (SAAS): you only worry about the software, while someone else takes care of the data centers, servers, networks, storage, maintenance, patching, etc. (ex: Gmail)
+1. Infrastructure As A Service (IAAS)<br>
+You manage a physical or virtual server; the data center provider will have no access to your server.
+2. Platform As A Service (PAAS)<br>
+Someone else manages the underlying hardware and operating systems; you do not have to worry about security patching, updates, maintenance, etc. (ex: Elastic Beanstalk)
+3. Software As A Service (SAAS)<br>
+You only worry about the software, while someone else takes care of the data centers, servers, networks, storage, maintenance, patching, etc. (ex: Gmail)
 
 ### 3 Types of Cloud Computing Deloyments:
 - Public Cloud (AWS, Azure, GCP)
