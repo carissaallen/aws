@@ -31,26 +31,40 @@ Example: _A web-based email, where you can send and receive email without having
 - **Hybrid**: connects infrastructure and applications between cloud-based resources and existing resources that are not located in the cloud
 - **On-Premises (or "Private Cloud")**: you manage it in your data center (Openstack, VMware)
 
+_Core services listed below are some of the services I focused on in advance of the Cloud Practitioner Exam._
 ### Core Services: 
 - Compute 
-	- EC2
-	- Lambda
+	- **EC2**
+	- Lightsail
+	- ECR
+	- ECS
+	- EKS
+	- **Lambda**
+	- Batch
+	- Elastic Beanstalk
+	- Serverless Application Repository
 - Storage
-	- S3: Simple Storage Service
-	- Glacier	
-- Databases
-	- Relational Database Service (RDS)
+	- S3 (Simple Storage Service)
+	- EFS (Elastic File System)
+	- S3 Glacier	
+	- Storage Gateway
+- Database
+	- RDS (Relational Database Service)
 	- DynamoDB (Non-relational Databases)
 - Security, Identity, & Compliance
+	- IAM
 - AWS Cost Management
-- Network
-	- Route53
+- Networking & Content Delivery
 	- VPC
+	- CloudFront
+	- Route53
+	- API Gateway
+	- Direct Connect
 
-### AWS Global Infrastructure
-- Availability Zone (AZ): one or more discrete data centers, each with redundant power, networking and connectivity, housed in separate facilities.
-- Region: a geographical area in the world which consists of two or more Availability Zones.
-- Edge location: endpoints for AWS used for caching content (typically this consists of CloudFront, Amazon's Content Delivery Network (CDN))
+### AWS Global Infrastructure [_(Regions and Availability Zones)_](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
+- **Availability Zone (AZ)**: one or more data centers, each with redundant power, networking and connectivity, housed in separate facilities.
+- **Region**: a geographical area (physical location) in the world, which consists of two or more Availability Zones for fault tolerance.
+- **Edge location**: endpoints for AWS used for _caching content_ (typically this consists of CloudFront, Amazon's Content Delivery Network (CDN)) to reduce latency.
 
 ### Support Plans
 - Basic
