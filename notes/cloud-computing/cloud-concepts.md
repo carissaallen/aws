@@ -66,6 +66,8 @@ _Core services listed below are some of the services I focused on in advance of 
 - **Region**: a geographical area (physical location) in the world, which consists of two or more Availability Zones for fault tolerance.
 - **Edge location**: endpoints for AWS used for _caching content_ (typically this consists of CloudFront, Amazon's Content Delivery Network (CDN)) to reduce latency.
 
+_Number of Edge Locations > Number of Availability Zones > Number of Regions_
+
 ### Support Plans
 - Basic
 	- Access to community forums
@@ -84,25 +86,33 @@ _Core services listed below are some of the services I focused on in advance of 
 	- Response time: business-critical system down < 15 minutes
 	- Starts at $15,000/month
 
-## Identity Access Management (IAM)
-- Global (you do not specify a region)
+## Identity Access Management [_(IAM)_](https://aws.amazon.com/iam/?nc=sn&loc=0)
+_Security, Identity & Compliance_ 
+- Global service (you do not specify a region)
 - Create a user or group (created globally)
+- Policies are applied to user/role/group to grant permissions
 
-### Access AWS platform in 3 ways:
+### Access AWS platform in 3 ways
 - via the Console (console.aws.amazon.com)
-- programmatically (using the command line)
-- using the Software Developers Kit (SDK)
+- programmatically (using the [command line](https://aws.amazon.com/cli/))
+- using the Software Developers Kit [(SDK)](https://aws.amazon.com/tools/)
 
-Root account: the email address you used to set up your AWS account.
+_Boto 3 [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) specifically for Python: Boto is the Amazon Web Services (AWS) SDK for Python. It enables Python developers to create, configure, and manage AWS services, such as EC2 and S3. Boto provides an easy to use, object-oriented API, as well as low-level access to AWS services._
+
+**Root account**: the email address you used to set up your AWS account
 	- has full administrator access
 	- create a user for each individual within your organization
 	- secure the root account using multi-factor authentication
 
-Group: a place to store your users
+**Group**: a place to store your users
 	- users inherit all permissions that group uses
 	- to set the permissions in a group, you must apply a policy to the group
 
-Policy: consist of JSON (key value pairs)
+**Policy**: consist of JSON (key value pairs), applied to user/role/group to grant permissions
+
+**Role**: defines a set of permissions for making AWS service requests. IAM roles are not associated with a specific user or group. Instead, trusted entities assume roles, such as IAM users, applications, or AWS services such as EC2.
+
+- IAM roles allow you to delegate access with defined permissions to trusted entities without having to share long-term access keys. You can use IAM roles to delegate access to IAM users managed within your account, to IAM users under a different AWS account, or to an AWS service such as EC2.
 
 ## S3
 S3: Simple Storage Service
@@ -124,6 +134,7 @@ S3 Object: think of Objects just as files.
 		- Subresources
 			- Access Control Lists
 			- Torrent	
+			
 ### Data Consistency for S3
 1. Read after Write consistency 
 	- PUTs of new Objects:
