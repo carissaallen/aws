@@ -151,17 +151,17 @@ _Read after write consistency_
 - Secure your data using Access Control Lists and Bucket Policies
 
 ### Storage Classes
-- S3 Standard
+- **S3 Standard**
 	- stored redundantly across multiple devices in multiple facilities (designed to sustain the loss of 2 facilities concurrently)
-- S3 IA (Infrequently Accessed)
+- **S3 IA (Infrequently Accessed)**
 	- data requires rapid access, for infrequent use; lower fee than S3, but you are charged a retrieval fee
-- S3 One Zone IA
+- **S3 One Zone IA**
 	- lower-cost option for infrequently accessed data, but do not require the multiple AZ data resilience
-- S3 Intelligent Tiering
+- **S3 Intelligent Tiering**
 	- designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead
-- S3 Glacier
+- **S3 Glacier**
 	- secure, durable, and low-cost storage class for data archiving; retrieval times configurable from minutes to hours
-- S3 Glacier Deep Archive
+- **S3 Glacier Deep Archive**
 	- lowest-cost storage class, where a retrieval time of 12 hours is acceptable
 
 ### S3 Pricing Based On...
@@ -194,7 +194,7 @@ _Read after write consistency_
 - S3 scales to meet your demand; useful for a large number of requests
 
 ## CloudFront
-A Content Delivery Network (CDN) is a system of distributed servers that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
+A **Content Delivery Network (CDN)** is a system of distributed servers that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
 
 ### Terminology
 - **Edge Location**: the location where content will be cached (there more of these than there are AZs or regions). You can read and write to Edge Locations.
@@ -210,7 +210,7 @@ _Example:_
 We have our origin in London (this is our S3 bucket containing our files). The users query the file (do you [Edge Location] have a copy of this file?). The Edge Location will not have the file upon this first query, and there will be added latency for this user. The Edge Location will connect to the origin and download the file, then stream it to the user. 
 When the second user queries the same file, that file is already cached at the Edge Location, so the second user doesn't have to download it from the origin. They can get it from an Edge Location nearest them.
 
-## EC2 (Elastic Compute Cloud)
+## EC2 [_(Elastic Compute Cloud)_](https://aws.amazon.com/ec2/)
 A virtual server (or servers) in the cloud.
 	- Reduces the time to obtain and boot new server instances to minutes,
 	  allowing you to quickly scale capacity (up and down) as your computing requirements change
