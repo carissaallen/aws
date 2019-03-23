@@ -1,7 +1,7 @@
 ## Cloud Computing
 Cloud computing: on-demand delivery of compute, database storage, applications, and other IT resources through a cloud services platform via the internet with pay-as-you-go pricing. (Think of it as renting someone else's computer!)
 
-**Advantages of Cloud Computing**
+### Advantages of Cloud Computing
 1. Trade capital expense for variable expense
 	- not invested in data centers and servers before you know how you're going to use them 
 	- only paying for _actual_ consumption of resources
@@ -70,16 +70,18 @@ _Core services listed below are some of the services I focused on in advance of 
 - Basic
 	- Access to community forums
 - Developer
-	- Technical support
-	- Response time: 12-24 hours
+	- Technical support (email, business hours)
+	- Response time: general < 24, system imparied < 12
 	- Starts at $29/month
 - Business
+	- Technical support (phone + email + chat, 24/7)
 	- AWS Trusted Advisor
-	- Response time: 1 hour
+	- Response time: production system down < 1
 	- Starts at $100/month
 - Enterprise
-	- Technical Account Manager (TAM)
-	- Response time: 15 minute
+	- Technical support (phone + email + chat, 24/7)
+	- Technical Account Manager (TAM), monitors environment and assists with optimization
+	- Response time: business-critical system down < 15 minutes
 	- Starts at $15,000/month
 
 ## Identity Access Management (IAM)
