@@ -95,7 +95,7 @@ _Security, Identity & Compliance_
 ### Access AWS platform in 3 ways
 - via the Console (console.aws.amazon.com)
 - programmatically (using the [command line](https://aws.amazon.com/cli/))
-- using the Software Developers Kit [(SDK)](https://aws.amazon.com/tools/)
+- using the [Software Developers Kit](https://aws.amazon.com/tools/) (SDK)
 
 _Boto 3 [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) specifically for Python: Boto is the Amazon Web Services (AWS) SDK for Python. It enables Python developers to create, configure, and manage AWS services, such as EC2 and S3. Boto provides an easy to use, object-oriented API, as well as low-level access to AWS services._
 
@@ -122,7 +122,7 @@ _Storage_
 * There is unlimited storage
 * Files are stored in _buckets_ (the bucket must have a unique name globally)
 * S3 is a universal namespace (that is, names must be unique globally)
-* Example bucket name: https://s3-eu-west-1.amazonaws.com/acloudguru
+	* _Example bucket name:_ https://s3-eu-west-1.amazonaws.com/acloudguru
 * Receive a HTTP 200 response code if upload was successful
 
 ### S3 Object (think of Objects as files)
@@ -136,12 +136,12 @@ Objects consist of:
     * Torrent	
 			
 ### Data Consistency for S3
-1. Read after Write consistency 
-	- PUT a new Object 
-		- If you write a new file (PUT a new file in S3) and read it immediately afterwards, you will be able to view the data immediately
-	- Overwrite a PUT (update an existing file or delete a file)
-		- When you read the file, you may get the older version
-		- Changes to existing objects can take some time to propagate
+_Read after write consistency_
+* PUT a new Object 
+	* If you write a new file (PUT a new file in S3) and read it immediately afterwards, you will be able to view the data immediately
+* Overwrite a PUT (update an existing file or delete a file)
+	* When you read the file, you may get the older version
+	* Changes to existing objects can take some time to propagate
 
 ### Features
 - Tiered Storage Available
@@ -164,8 +164,7 @@ Objects consist of:
 - S3 Glacier Deep Archive
 	- lowest-cost storage class, where a retrieval time of 12 hours is acceptable
 
-### Pricing
-Based on...
+### S3 Pricing Based On...
 - Storage
 - Requests
 - Storage Management Pricing
@@ -175,7 +174,7 @@ Based on...
 - Cross Region Replication Pricing
 	- replicates file to a secondary bucket so you have disaster recovery
 
-### Creating an S3 bucket: Tips
+### Tips for Creating an S3 bucket
 - Bucket names share a common name space; you cannot have the same bucket name as someone else
 - When you view your buckets, you view them globally, but you can have buckets in individual regions
 - You can replicate the contents of one bucket to another bucket automatically using Cross Region Replication
@@ -195,21 +194,23 @@ Based on...
 - S3 scales to meet your demand; useful for a large number of requests
 
 ## CloudFront
-- A content delivery network (CDN) is a system of distributed servers (network) that deliver webpages and other web content to a user based on teh geographic locations of the user, the origin of the webpage, and a content delivery server.
+A Content Delivery Network (CDN) is a system of distributed servers that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
 
 ### Terminology
-- Edge Location: the location where content will be cached (more of these than there are regions). This is separate to an AWS Region/AZ. You can read and write to Edge Locations.
-- Origin: the origin of all the files that the CDN will distribute. This can be an S3 Bucket, an EC2 instance, an Elastic Load Balancer, or Route53.
-- Distribution: this is the name given the CDN which consists of a collection of Edge Locations.
+- **Edge Location**: the location where content will be cached (there more of these than there are AZs or regions). You can read and write to Edge Locations.
+- **Origin**: the origin of all the files that the CDN will distribute. This can be an S3 Bucket, an EC2 Instance, an Elastic Load Balancer, or Route53.
+- **Distribution**: this is the name given the CDN which consists of a collection of Edge Locations.
 	- Web Distribution (typically used for websites)
 	- RTMP (used for media streaming)
-- TTL: Objects are cached for the life of TTL (Time To Live) in seconds.
-
-Example: we have our origin in London (this is our S3 bucket containing our files). The users query the file (do you [Edge Location] have a copy of this file?). The Edge Location will not have the file upon this first query, and there will be added latency for this user. The Edge Location will connect to the origin and download the file, then stream it to the user. When the second user queries the same file; that file is already cached at the Edge Location, so the second user doesn't have to download it from the origin. They can get it from an Edge Location nearest them.
+- **TTL (Time To Live)**: Time (in seconds) in which the Objects are cached for.
 
 You can clear your cached objects, but you will be charged for doing that.
 
-## EC2: Elastic Compute Cloud
+_Example:_ 
+We have our origin in London (this is our S3 bucket containing our files). The users query the file (do you [Edge Location] have a copy of this file?). The Edge Location will not have the file upon this first query, and there will be added latency for this user. The Edge Location will connect to the origin and download the file, then stream it to the user. 
+When the second user queries the same file, that file is already cached at the Edge Location, so the second user doesn't have to download it from the origin. They can get it from an Edge Location nearest them.
+
+## EC2 (Elastic Compute Cloud)
 A virtual server (or servers) in the cloud.
 	- Reduces the time to obtain and boot new server instances to minutes,
 	  allowing you to quickly scale capacity (up and down) as your computing requirements change
