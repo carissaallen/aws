@@ -1,7 +1,7 @@
 ## Cloud Computing
 Cloud computing: on-demand delivery of compute, database storage, applications, and other IT resources through a cloud services platform via the internet with pay-as-you-go pricing. (Think of it as renting someone else's computer!)
 
-Six advantages of cloud computing:
+**Advantages of Cloud Computing**
 1. Trade capital expense for variable expense
 	- not invested in data centers and servers before you know how you're going to use them 
 	- only paying for _actual_ consumption of resources
@@ -17,19 +17,19 @@ Six advantages of cloud computing:
 	- lower latency and better experience for customers
 
 ### Types of Cloud Computing [_(Cloud Computing Models)_](https://aws.amazon.com/types-of-cloud-computing/)
-1. Infrastructure As A Service (IaaS)<br>
+1. **Infrastructure As A Service (IaaS)**<br>
 You manage a physical or virtual server; the data center provider will have no access to your server.
-2. Platform As A Service (PaaS)<br>
+2. **Platform As A Service (PaaS)**<br>
 Someone else manages the underlying infrastructure (usually hardware and operating systems); you do not have to worry about security patching, updates, maintenance, etc. You only focus on the deployment and management of your applications.<br>
 Example: _Elastic Beanstalk_
-3. Software As A Service (SaaS)<br>
+3. **Software As A Service (SaaS)**<br>
 Typically referring to end-user applications. You do not have to think about how the service is maintained or how the underlying infrastructure is managed (someone else takes care of the data centers, servers, networks, storage, maintenance, patching, etc.); you only need to think about how you will use that particular piece software.<br>
 Example: _A web-based email, where you can send and receive email without having to manage feature additions to the email product or maintaining the servers and operating systems that the email program is running on._
 
-### 3 Types of Cloud Computing Deloyments:
-- Public Cloud (AWS, Azure, GCP)
-- Hybrid (mixture of public and private)
-- Private Cloud (On Premise); you manage it in your datacenter (Openstack, VMware)
+### Cloud Computing Deployment Models
+- **Public Cloud**: fully deployed in the cloud and all parts of the application run in the cloud (AWS, Azure, GCP)
+- **Hybrid**: connects infrastructure and applications between cloud-based resources and existing resources that are not located in the cloud
+- **On-Premises (or "Private Cloud")**: you manage it in your data center (Openstack, VMware)
 
 ### Core Services: 
 - Compute 
