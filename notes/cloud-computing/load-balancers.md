@@ -12,3 +12,7 @@ Best suited for load balancing of Transmission Control Protocol (TCP) and Transp
 ### Classic Load Balancer
 Provides basic load balancing across multiple EC2 Instances and operates at both the request level and connection level. Intended for applications that were build within the EC2-Classic network.
 
+## Auto Scaling
+You can maintain application availability and scale your EC2, DynamoDB, ECS, Elastic Container Service for Kubernetes (EKS) capacity up or down automatically according to the conditions you define.
+
+You can use Auto Scaling to help make sure that you are running the desired number of healthy EC2 instances across multiple Availability Zones. Auto Scaling can also automatically increase the number of EC2 instances during demand spikes to maintain performance and decrease capacity during less busy periods to optimize costs.
