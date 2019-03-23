@@ -16,26 +16,25 @@ AWS is responsible for security of the hardware, availability regions, any softw
 <img src="https://github.com/carissaallen/aws/blob/master/notes/cloud-computing/Shared_Responsibility_Model.jpg">
 
 ## AWS WAF
-WAF = Web applicaton firewall 
-
-	- Helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
-	- Layer 7 firewall (at the application layer), protects against hackers.
-	- If a WAF is in front of your load balancer, it will not pass the attack (SQL injection, cross site scripting, etc.) through to your EC2 Instance.
+WAF = Web applicaton firewall <br>
+* Helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
+* Layer 7 firewall (at the application layer), protects against hackers.
+* If a WAF is in front of your load balancer, it will not pass the attack (SQL injection, cross site scripting, etc.) through to your EC2 Instance.
 
 ## AWS Shield
 A managed Distributed Denial of Service (DDoS) protection service that safeguards web applications running on AWS. 
-	- Provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS Protection.
-	- Designed to stop DDoS attacks.
-		- Standard Tier
-		- Advanced Tier 
+  * Provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS Protection.
+  * Designed to stop DDoS attacks.
+    * Standard Tier
+    * Advanced Tier 
 
 ## AWS Inspector (Security, Identity & Compliance)
 _Inspects EC2 instances for vulnerabilities._
 
 An automated security assessment service that helps improve the security and compliance of applications deployed on AWS.
-	- Automatically assesses applications for vulnerabilities or deviations from best practices.
-	- After performing an assessment, it produces a detailed list of security findings prioritized by level of severity.
-	- These findings can be reviewed directly or as part of detailed assessment reports, available via the Inspector console or API.
+  * Automatically assesses applications for vulnerabilities or deviations from best practices.
+  * After performing an assessment, it produces a detailed list of security findings prioritized by level of severity.
+  * These findings can be reviewed directly or as part of detailed assessment reports, available via the Inspector console or API.
 
 It's an agent that you install on your EC2 Instances; it will review the EC2 instances for common vulnerabilities (e.g., need to update security patches). 
 
@@ -50,7 +49,7 @@ An online resource to help you reduce cost, increase performance, and improve se
 
 ## Cloud Trail (Management & Governance)
 Increases visibility into your user and resource activity by recording AWS Management Console actions and API calls. 
-	- You can identify which users and accounts called AWS, the source IP address from which the calls were made, and when the calls occurred.
+  * You can identify which users and accounts called AWS, the source IP address from which the calls were made, and when the calls occurred.
 	
 ## Quiz Answers
 - [Compliance Programs](https://aws.amazon.com/compliance/programs/)
