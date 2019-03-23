@@ -1,10 +1,10 @@
 ## Cloud Computing
 Cloud computing: on-demand delivery of compute, database storage, applications, and other IT resources through a cloud services platform via the internet with pay-as-you-go pricing. (Think of it as renting someone else's computer!)
 
-Six advantages of cloud computing:
+### Advantages of Cloud Computing
 1. Trade capital expense for variable expense
 	- not invested in data centers and servers before you know how you're going to use them 
-	- paying only for actual consumption of resources
+	- only paying for _actual_ consumption of resources
 2. Benefit from massive economies of scale
 	- Amazon has a larger purchasing power (they build their own servers!)
 3. Not guessing about capacity
@@ -16,100 +16,132 @@ Six advantages of cloud computing:
 6. Go global in minutes
 	- lower latency and better experience for customers
 
-### Types of Cloud Computing: 
-1. Infrastructure As A Service (IAAS): you manage a physical or virtual server; the data center provider will have no access to your server.
-2. Platform As A Service (PAAS): someone else manages the underlying hardware and operating systems; you do not have to worry about security patching, updates, maintenance, etc. (ex: Elastic Beanstalk)
-3. Software As A Service (SAAS): you only worry about the software, while someone else takes care of the data centers, servers, networks, storage, maintenance, patching, etc. (ex: Gmail)
+### Types of Cloud Computing [_(Cloud Computing Models)_](https://aws.amazon.com/types-of-cloud-computing/)
+1. **Infrastructure As A Service (IaaS)**<br>
+You manage a physical or virtual server; the data center provider will have no access to your server.
+2. **Platform As A Service (PaaS)**<br>
+Someone else manages the underlying infrastructure (usually hardware and operating systems); you do not have to worry about security patching, updates, maintenance, etc. You only focus on the deployment and management of your applications.<br>
+Example: _Elastic Beanstalk_
+3. **Software As A Service (SaaS)**<br>
+Typically referring to end-user applications. You do not have to think about how the service is maintained or how the underlying infrastructure is managed (someone else takes care of the data centers, servers, networks, storage, maintenance, patching, etc.); you only need to think about how you will use that particular piece software.<br>
+Example: _A web-based email, where you can send and receive email without having to manage feature additions to the email product or maintaining the servers and operating systems that the email program is running on._
 
-### 3 Types of Cloud Computing Deloyments:
-- Public Cloud (AWS, Azure, GCP)
-- Hybrid (mixture of public and private)
-- Private Cloud (On Premise); you manage it in your datacenter (Openstack, VMware)
+### Cloud Computing Deployment Models
+- **Public Cloud**: fully deployed in the cloud and all parts of the application run in the cloud (AWS, Azure, GCP)
+- **Hybrid**: connects infrastructure and applications between cloud-based resources and existing resources that are not located in the cloud
+- **On-Premises (or "Private Cloud")**: you manage it in your data center (Openstack, VMware)
 
+_Core services listed below are some of the services I focused on in advance of the Cloud Practitioner Exam._
 ### Core Services: 
 - Compute 
-	- EC2
-	- Lambda
+	- **EC2**
+	- Lightsail
+	- ECR
+	- ECS
+	- EKS
+	- **Lambda**
+	- Batch
+	- Elastic Beanstalk
+	- Serverless Application Repository
 - Storage
-	- S3: Simple Storage Service
-	- Glacier	
-- Databases
-	- Relational Database Service (RDS)
+	- S3 (Simple Storage Service)
+	- EFS (Elastic File System)
+	- S3 Glacier	
+	- Storage Gateway
+- Database
+	- RDS (Relational Database Service)
 	- DynamoDB (Non-relational Databases)
 - Security, Identity, & Compliance
+	- IAM
 - AWS Cost Management
-- Network
-	- Route53
+- Networking & Content Delivery
 	- VPC
+	- CloudFront
+	- Route53
+	- API Gateway
+	- Direct Connect
 
-### AWS Global Infrastructure
-- Availability Zone (AZ): one or more discrete data centers, each with redundant power, networking and connectivity, housed in separate facilities.
-- Region: a geographical area in the world which consists of two or more Availability Zones.
-- Edge location: endpoints for AWS used for caching content (typically this consists of CloudFront, Amazon's Content Delivery Network (CDN))
+### AWS Global Infrastructure [_(Regions and Availability Zones)_](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
+- **Availability Zone (AZ)**: one or more data centers, each with redundant power, networking and connectivity, housed in separate facilities.
+- **Region**: a geographical area (physical location) in the world, which consists of two or more Availability Zones for fault tolerance.
+- **Edge location**: endpoints for AWS used for _caching content_ (typically this consists of CloudFront, Amazon's Content Delivery Network (CDN)) to reduce latency.
+
+_Number of Edge Locations > Number of Availability Zones > Number of Regions_
 
 ### Support Plans
 - Basic
 	- Access to community forums
 - Developer
-	- Technical support
-	- Response time: 12-24 hours
+	- Technical support (email, business hours)
+	- Response time: general < 24, system imparied < 12
 	- Starts at $29/month
 - Business
+	- Technical support (phone + email + chat, 24/7)
 	- AWS Trusted Advisor
-	- Response time: 1 hour
+	- Response time: production system down < 1
 	- Starts at $100/month
 - Enterprise
-	- Technical Account Manager (TAM)
-	- Response time: 15 minute
+	- Technical support (phone + email + chat, 24/7)
+	- Technical Account Manager (TAM), monitors environment and assists with optimization
+	- Response time: business-critical system down < 15 minutes
 	- Starts at $15,000/month
 
-## Identity Access Management (IAM)
-- Global (you do not specify a region)
+## Identity Access Management [_(IAM)_](https://aws.amazon.com/iam/?nc=sn&loc=0)
+_Security, Identity & Compliance_ 
+- Global service (you do not specify a region)
 - Create a user or group (created globally)
+- Policies are applied to user/role/group to grant permissions
 
-### Access AWS platform in 3 ways:
+### Access AWS platform in 3 ways
 - via the Console (console.aws.amazon.com)
-- programmatically (using the command line)
-- using the Software Developers Kit (SDK)
+- programmatically (using the [command line](https://aws.amazon.com/cli/))
+- using the [Software Developers Kit](https://aws.amazon.com/tools/) (SDK)
 
-Root account: the email address you used to set up your AWS account.
+_Boto 3 [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) specifically for Python: Boto is the Amazon Web Services (AWS) SDK for Python. It enables Python developers to create, configure, and manage AWS services, such as EC2 and S3. Boto provides an easy to use, object-oriented API, as well as low-level access to AWS services._
+
+**Root account**: the email address you used to set up your AWS account
 	- has full administrator access
 	- create a user for each individual within your organization
 	- secure the root account using multi-factor authentication
 
-Group: a place to store your users
+**Group**: a place to store your users
 	- users inherit all permissions that group uses
 	- to set the permissions in a group, you must apply a policy to the group
 
-Policy: consist of JSON (key value pairs)
+**Policy**: consist of JSON (key value pairs), applied to user/role/group to grant permissions
 
-## S3
-S3: Simple Storage Service
-	- A place to put your flat files (flat file: a file that doesn't change).
-	- Object-based storage; allows you to upload files
-	- Files 0 Bytes to 5 TB
-	- There is unlimited storage
-	- Files are sotred in Buckets (bucket must be a unique name globally)
-	- S3 is a universal namespace (that is, names must be unique globally)
-	- ex: https://s3-eu-west-1.amazonaws.com/acloudguru
-	- Receive a HTTP 200 response code if upload was successful
+**Role**: defines a set of permissions for making AWS service requests. IAM roles are not associated with a specific user or group. Instead, trusted entities assume roles, such as IAM users, applications, or AWS services such as EC2.
 
-S3 Object: think of Objects just as files.
-	- Objects consist of:
-		- Key: the name of the object
-		- Value: the data, made up of a sequence of bytes
-		- Version ID 
-		- Metadata (data about the data you are storing)
-		- Subresources
-			- Access Control Lists
-			- Torrent	
+- IAM roles allow you to delegate access with defined permissions to trusted entities without having to share long-term access keys. You can use IAM roles to delegate access to IAM users managed within your account, to IAM users under a different AWS account, or to an AWS service such as EC2.
+
+## Simple Storage Service [_(S3)_](https://aws.amazon.com/s3/)
+_Storage_ 
+* A place to put your _flat files_ (static media)
+* Object-based storage; allows you to upload files
+* Files 0 Bytes to 5 TB
+* There is unlimited storage
+* Files are stored in _buckets_ (the bucket must have a unique name globally)
+* S3 is a universal namespace (that is, names must be unique globally)
+	* _Example bucket name:_ https://s3-eu-west-1.amazonaws.com/acloudguru
+* Receive a HTTP 200 response code if upload was successful
+
+### S3 Object (think of Objects as files)
+Objects consist of:
+  * Key: the name of the object
+  * Value: the data, made up of a sequence of bytes
+  * Version ID
+  * Metadata (data about the data you are storing)
+  * Subresources
+    * Access Control Lists
+    * Torrent	
+			
 ### Data Consistency for S3
-1. Read after Write consistency 
-	- PUTs of new Objects:
-		- If you write a new file (putting a new file in S3) and read it immediately afterwards, you will be able to view the data immediately.
-	- Overwrite PUTs (update an existing file, or delete a file)
-		- When you read the file, you may get the older version
-		- Changes to objects can take some time to propagate
+_Read after write consistency_
+* PUT a new Object 
+	* If you write a new file (PUT a new file in S3) and read it immediately afterwards, you will be able to view the data immediately
+* Overwrite a PUT (update an existing file or delete a file)
+	* When you read the file, you may get the older version
+	* Changes to existing objects can take some time to propagate
 
 ### Features
 - Tiered Storage Available
@@ -119,20 +151,20 @@ S3 Object: think of Objects just as files.
 - Secure your data using Access Control Lists and Bucket Policies
 
 ### Storage Classes
-- S3 Standard
+- **S3 Standard**
 	- stored redundantly across multiple devices in multiple facilities (designed to sustain the loss of 2 facilities concurrently)
-- S3 IA (Infrequently Accessed)
+- **S3 IA (Infrequently Accessed)**
 	- data requires rapid access, for infrequent use; lower fee than S3, but you are charged a retrieval fee
-- S3 One Zone IA
+- **S3 One Zone IA**
 	- lower-cost option for infrequently accessed data, but do not require the multiple AZ data resilience
-- S3 Intelligent Tiering
+- **S3 Intelligent Tiering**
 	- designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead
-- S3 Glacier
+- **S3 Glacier**
 	- secure, durable, and low-cost storage class for data archiving; retrieval times configurable from minutes to hours
-- S3 Glacier Deep Archive
+- **S3 Glacier Deep Archive**
 	- lowest-cost storage class, where a retrieval time of 12 hours is acceptable
 
-### Pricing
+### S3 Pricing Based On...
 - Storage
 - Requests
 - Storage Management Pricing
@@ -142,9 +174,9 @@ S3 Object: think of Objects just as files.
 - Cross Region Replication Pricing
 	- replicates file to a secondary bucket so you have disaster recovery
 
-### Created an S3 bucket: Tips
+### Tips for Creating an S3 bucket
 - Bucket names share a common name space; you cannot have the same bucket name as someone else
-- When you view your buckets, you vie them globally but you can have buckets in individual regions
+- When you view your buckets, you view them globally, but you can have buckets in individual regions
 - You can replicate the contents of one bucket to another bucket automatically using Cross Region Replication
 - You can change the storage class and encryption on the fly 
 	- S3 Standard
@@ -162,37 +194,38 @@ S3 Object: think of Objects just as files.
 - S3 scales to meet your demand; useful for a large number of requests
 
 ## CloudFront
-- A content delivery network (CDN) is a system of distributed servers (network) that deliver webpages and other web content to a user based on teh geographic locations of the user, the origin of the webpage, and a content delivery server.
+A **Content Delivery Network (CDN)** is a system of distributed servers that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
 
 ### Terminology
-- Edge Location: the location where content will be cached (more of these than there are regions). This is separate to an AWS Region/AZ. You can read and write to Edge Locations.
-- Origin: the origin of all the files that the CDN will distribute. This can be an S3 Bucket, an EC2 instance, an Elastic Load Balancer, or Route53.
-- Distribution: this is the name given the CDN which consists of a collection of Edge Locations.
+- **Edge Location**: the location where content will be cached (there more of these than there are AZs or regions). You can read and write to Edge Locations.
+- **Origin**: the origin of all the files that the CDN will distribute. This can be an S3 Bucket, an EC2 Instance, an Elastic Load Balancer, or Route53.
+- **Distribution**: this is the name given the CDN which consists of a collection of Edge Locations.
 	- Web Distribution (typically used for websites)
 	- RTMP (used for media streaming)
-- TTL: Objects are cached for the life of TTL (Time To Live) in seconds.
-
-Example: we have our origin in London (this is our S3 bucket containing our files). The users query the file (do you [Edge Location] have a copy of this file?). The Edge Location will not have the file upon this first query, and there will be added latency for this user. The Edge Location will connect to the origin and download the file, then stream it to the user. When the second user queries the same file; that file is already cached at the Edge Location, so the second user doesn't have to download it from the origin. They can get it from an Edge Location nearest them.
+- **TTL (Time To Live)**: Time (in seconds) in which the Objects are cached for.
 
 You can clear your cached objects, but you will be charged for doing that.
 
-## EC2: Elastic Compute Cloud
+_Example:_ 
+We have our origin in London (this is our S3 bucket containing our files). The users query the file (do you [Edge Location] have a copy of this file?). The Edge Location will not have the file upon this first query, and there will be added latency for this user. The Edge Location will connect to the origin and download the file, then stream it to the user. <br>
+When the second user queries the same file, that file is already cached at the Edge Location, so the second user doesn't have to download it from the origin. They can get it from an Edge Location nearest them.
+
+## EC2 [_(Elastic Compute Cloud)_](https://aws.amazon.com/ec2/)
 A virtual server (or servers) in the cloud.
-	- Reduces the time to obtain and boot new server instances to minutes,
-	  allowing you to quickly scale capacity (up and down) as your computing requirements change
+* Reduces the time to obtain and boot new server instances to minutes, allowing you to quickly scale capacity (up and down) as your computing requirements change.
 
 ### Pricing Models
 **On Demand**
-	- Allows you to pay a fixed rate by the hour (or by the second) with no commitment
+	* Allows you to pay a fixed rate by the hour (or by the second) with no commitment
 **Reserved**
-	- Provides a capacity reservation, and offer a significant discount on thehourly charge for an instance
-	- Contract terms are 1 year or 3 year terms
+	* Provides a capacity reservation, and offers a significant discount on the hourly charge for an instance
+	* Contract terms are 1 or 3 year terms
 **Spot**
-	- Enables you to bid whatever price you want for instance capacity
-	- Provides for even greater savings if your applicans have flexible start/end times
+	* Enables you to bid whatever price you want for instance capacity
+	* Provides for even greater savings if your applicans have flexible start/end times
 **Dedicated Hosts**
-	- Physical EC2 server dedicated for your use
-	- Helps reduce costs by allowing you to use your existing server-bound software licenses
+	* Physical EC2 server dedicated for your use
+	* Helps reduce costs by allowing you to use your existing server-bound software licenses
 
 ### EC2 Instance Types
 Fight Dr. McPxz 
@@ -203,20 +236,20 @@ H - High Disk Throughput
 T - Cheap general purpose (think T2 Micro)
 D - Density
 R - RAM
-M - Main choice for general pupose apps
+M - Main choice for general purpose apps
 C - Compute
 P - Graphics (think Pictures)
 X - Extreme Memory
 Z - Extreme Memory and CPU
 
 ### EBS
-_A virtual disk in the cloud that the virtual servers run off._
+_A virtual disk in the cloud that the virtual servers run off of._
 
-Allows you to create storage volumes and attach them to EC3 instances. Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use a block device. 
+Allows you to create storage volumes and attach them to EC3 instances. Once attached, you can create a file system on top of those volumes, run a database, or use them in any other way you would use a block device. 
 
 Placed in an Availability Zone (same one as the EC2 instance), where they are automatically replicated for protection from the failure of a single component.
 
-Types (of virutal disks in the cloud):
+Types (of virtual disks in the cloud):
 1. SSD
 	- General Purpose SSD (GP2)
 	- Provisioned IOPS SSD (IO1) 
@@ -315,58 +348,6 @@ To view the web server, paste your IP address into the web browser. Voila!
 - Network Load Balancers: Extreme Performance/Static IP Addresses 
 - Classic Load Balancers: Test & Dev, Keep Costs Low
 
-## Databases 
-### Relational Databases
-- Relational databases: think of a traditional spreadsheet!
-- On AWS: it's called RDS
-	- multiple Availability Zones for disaster recovery
-	- read replicas (copies of your production database) for performance
-
-#### How It Connects
-Your EC2 instance points to a DNS, or connection, string (e.g., myexampledb.alb2c3d4wxyz.us-west-2.rds.amazonaws.com) which points to your primary database in AZ 1 and a secondary database in AZ 2.
-
-You can set it up so your EC2 instances do their writes to your primary database, and all their reads from the read replica (up to 5 copies!).
-
-#### Non Relationl Databases
-- Collection = Table
-- Document = Row
-- Key Value Pairs:
-
-```
-{ 
-"_id":#1235353",
-"name":"Samson",
-"nickname":"Sammy",
-"age":"6",
-"address":[
-{"street":"21 Jump Street",
-"suburb":"Pearl"}
-  ]
-}
-```
-
-Provides flexibility. 
-	- Can add columns without impacting all rows.
-
-Amazon's Non Relational Database is called **DynamoDB**. 
-
-#### OLTP vs. OLAP
-- Online Transaction Processing (OLTP)
-- Online Analytics Processing (OLAP)
-- Differes in terms of the types of queries you will run
-
-OLTP Example:
-Query Order No. 2120121
-Returns the row of data: Name, Date, Delivery Address, Delivery Status
-(Inserts or retrieves a row in the database)
-
-OLAP Example:
-Query net profit for EMEA and Pacific for the Digital Radio Product. 
-(Pulls in large numbers of records.)
-
-Data Warehousing allows you to do this away from your database. They use a different architecture.
-Amazon's Data Warehouse solution is called _Redshift_.
-
 #### ElastiCache
 _A caching engine in the cloud for your most common queries; will take a big load off your production databases because they are querying ElastiCache instead of your production databases._
 
@@ -452,138 +433,7 @@ _Helps you model and set up your Amazon Web Services resources._
 - Elastic Beanstalk is limited in what it can provision and is not programmable.
 - CloudFormation can provision almost any AWS service and is completely programmable.
 
-## Architecting for the Cloud: Best Practices
-**_Read the whitepaper._**
-
-### Traditional Computing vs. Cloud Computing
-- IT Assets are available as provisioned resources
-	- CloudFormation allows us to have templates (using JSON) to create EC2 Instances, S3 Buckets, almost anything inside the AWS ecosystem.
-	- Global, Available, and Scalable Capacity.
-	- Higher Level Managed Services (for Machine Learning).
-	- Built-in Security (IAM, etc.)
-	- Architecting for Cost (can architect your environment to be cost-efficient).
-	- Operations on AWS.
-- Traditional Copmuting
-	- Get a purchase order, purchase physical servers, 3-5 year contract, the servers would need to be racked, connected to the networking gear, must install the operating systems, etc.  
-
-### Design Principles
-
-#### Scalability
-**Scale Up**
-	-  Increasing RAM or amount of CPU inside a virtual machine.
-**Scale Out**
-	- Add multiple virtual machines behind an application load balancer, for example.
-		- Stateless Applications (Lambda)
-		- Distribute Load to Multiple Nodes (e.g., multiple EC2 servers, and database replicas)
-		- Stateless Components 
-			- Do not need to remember the information.
-		- Stateful Components 
-			- Do not want to lose information; store in database or something stateful.
-		- Implement Session Affinity
-			- Sticky session: put a cookie in a user's browser so every time they visit that website the Application Load Balancer will detect that cookie and send them back to that same EC2 Instance. You're "stuck" to a particular EC2 Instance.
-		- Distributed Processing
-		- Implement Distributed Processing
-			- Elastic map reduce; it allows you to have a whole bunch of different EC2 Instances, and they process large, complex data. You have thousands of instances to reduce the time to process that data.
-		- Instantiating Compute Resources
-			- Bootstrapping (you do not want to manually configure your EC2 Instances; we can use a bootstrap script to install updates, or Word Press, for example)
-			- Golden Images (set up autoscaling; took an image of our configured EC2 Instance for resuse)
-			- Containers
-			- Hybrid (containers and EC2 Instances)
-
-#### Infrastructure As Code
-_Disposable Resources Instead of Fixed Servers._	
-- CloudFormation
-
-#### Automation
-- Serverless Mangement and Deployment
-	- Using code pipeline, code deploy, etc.
-- Infrastructure Mangement and Deployment
-	- AWS Elastic Beanstalk
-	- Amazon EC2 auto recovery
-	- AWS Systems Manager
-	- Auto Scaling
-
-- Alarms and Events
-	- Amazon CloudWatch alarms	
-	- Amazon CloudWatch events
-		- A way of having your environment proactively respond to a change in the environment.
-	- AWS Lambda scheduled events
-	- AWS WAF security automations
-		- WAF: Web Application Firewall
-		- Can automatically respond to someone doing something to your site (e.g., SQL Injection)
-
-#### Loose Coupling
-- Well Defined Interfaces
-	- Amazon API Gateway
-		- Allows you to create your own APIs and expose them to the internet
-- Service Discovery
-	- Implement Service Discovery
-		- If you have an EC2 Instance that needs to connect to an RDS instance using its DNS name with multiple AZ turned on, if the RDS instance fails, AWS will switch it to the other availability zone. Allows one component of AWS automatically discover another component of AWS.
-- Asynchronous Integration
-- Distributed Systems Best Practices
-	- Graceful Failure in Practice
-		- Example: If you have an S3 website and a page doesn't exist, you have an error.hmtl page to tell the users there has been a failure. Additionally, you have a mechanism to report this back to your system administrators. 
-
-#### Services Not Servers
-_Use serverless services as much as possible so that servers do not have to be managed._
-
-"No server is easier to manage than no server." - Werner Vogels (CTO, Amazon)
-
-#### Databases
-Relational Databases (Aurora)
-	- Scalability 
-	- Will always have 6 copies of your data across 3+ availability zones
-	- Anti-patterns: would not use Aurora if you do not have a need for joins or complex transactions; use No-SQL instead
-
-Non-Relational Databases (DynamoDB)
-	- Scalability
-	- High availability, multiple AZ
-	- Anti-patterns: requires joins or complex transactions, or you have large binary files
-
-Data Warehouse (Redshift)
-	- Scalability
-	- High availability, multiple AZ  
-	- Anti-patterns: not meant for Online Transaction Processing (OLTP)
-
-Graph Databases (Amazon Neptune)
-	- Scalability
-	- High Availability
-
-Managing Increasing Volumes of Data: Data Lake
-An architectural approach that allows you to store massive amounts of data in a central location (like S3!) so it is readily available to be categorized, processed, analyzed, and consumed by diverse groups within your organization. 
-
-Since data can be stored as-is, you do not have to convert it to a predefined schema, and you no longer need to know what questions to ask about your data beforehand.
-
-Removing Single Points of Failure
-	- Introducing Redundancy
-	- Detect Failure
-	- Durable Data Storage
-	- Automated Multi-Data Center Resilience
-	- Fault Isolation and Traditional Horizontal Scaling
-	- Sharding
-
-Optimize for Cost
-	- Right Sizing
-	- Elasticity 
-		- Your application will expand or contract depending on usage
-	- Take advantage of the variety of purchasing options (spot, reserverd, etc.)
-
-Caching
-	- Application Caching
-		- Using ElastiCache
-	- Edge Caching
-		- CloudFront
-
-Security
-	- Use AWS Features for Defense in Depth
-	- Share Security Responsibility with AWS	
-		- You and AWS are each responsibile for certain things
-	- Reduce Privileged Access (give developers _enough_ access to do their job)
-	- Security as Code 
-	- Real-Time Auditing
-		- AWS Inspector and other security services
-
-Quiz Answers:
+## Mega Quiz Answers
 - Bucket Policies are used to make entire buckets (like one hosting an S3 website) public.
 - Objects stored in S3 are stored in multiple servers in multiple facilities across AWS.
 - Availability Zones are distinct locations from within an AWS region that are engineered to be isolated from failures.
@@ -601,136 +451,3 @@ Quiz Answers:
 - The two types of access are AWS Management Console access and Programmatic Access via the AWS API, the CLI, and the SDKs.
 - To restrict access to an entire bucket, you use bucket policies; and to restrict access to an individual object, you use access control lists.
 - A CloudFront Origin can be an S3 bucket, an EC2 instance, an Elastic Load Balancer, or Route 53.
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
