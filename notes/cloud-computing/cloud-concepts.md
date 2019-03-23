@@ -433,7 +433,7 @@ _Helps you model and set up your Amazon Web Services resources._
 - Elastic Beanstalk is limited in what it can provision and is not programmable.
 - CloudFormation can provision almost any AWS service and is completely programmable.
 
-**Quiz Answers:**
+## Mega Quiz Answers
 - Bucket Policies are used to make entire buckets (like one hosting an S3 website) public.
 - Objects stored in S3 are stored in multiple servers in multiple facilities across AWS.
 - Availability Zones are distinct locations from within an AWS region that are engineered to be isolated from failures.
