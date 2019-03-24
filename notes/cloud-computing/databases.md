@@ -10,7 +10,7 @@ Your EC2 instance points to a DNS string (connection string: e.g., myexampledb.a
 
 You can set it up so your EC2 instances do their writes to your primary database, and all their reads from the read replica (up to 5 copies!).
 
-#### Non Relationl Databases (DyanmoDB)
+#### Non Relational Databases (DyanmoDB)
 If your application primarily indexes and queries data with no need for joins or complex transactions--consider a NoSQL database. 
 
 - Collection = Table
