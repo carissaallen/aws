@@ -13,20 +13,28 @@ Each markdown file in _notes_ contains my notes on a particular AWS topic. These
 ├── README.md
 ├── amazon
 │   ├── AWS_Certified_Cloud_Practitioner_Exam_Guide.pdf
-│   └── AWS_Certified_Cloud_Practitioner_Sample_Questions.pdf
+│   ├── AWS_Certified_Cloud_Practitioner_Sample_Questions.pdf
+│   ├── AWS_Certified_Solutions_Architect_Associate_Exam_Guide.pdf
+│   └── AWS_Certified_Solutions_Architect_Associate_Sample_Questions.pdf
+├── certification
+│   ├── AWS_Certified_Cloud_Practitioner.pdf
+│   ├── AWS_Certified_Logo_588x300_Color.png
+│   └── AWS_Certified_Logo__CloudPractitioner_588x300-Color.png
 ├── notes
-│   └── cloud-computing
-│       ├── Shared_Responsibility_Model.jpg
-│       ├── application-integration.md
-│       ├── architecting-for-the-cloud.md
-│       ├── billing-pricing.md
-│       ├── cloud-concepts.md
-│       ├── databases.md
-│       ├── exam-simulator.md
-│       ├── load-balancers.md
-│       ├── quiz.md
-│       ├── security.md
-│       └── storage.md
+│   ├── cloud-computing
+│   │   ├── README.md
+│   │   ├── Shared_Responsibility_Model.jpg
+│   │   ├── application-integration.md
+│   │   ├── architecting-for-the-cloud.md
+│   │   ├── billing-pricing.md
+│   │   ├── cloud-concepts.md
+│   │   ├── databases.md
+│   │   ├── exam-simulator.md
+│   │   ├── load-balancers.md
+│   │   ├── quiz.md
+│   │   ├── security.md
+│   │   └── storage.md
+│   └── solutions-architect
 └── whitepapers
     ├── AWS_Cloud_Best_Practices.pdf
     └── AWS_Pricing_Overview.pdf
