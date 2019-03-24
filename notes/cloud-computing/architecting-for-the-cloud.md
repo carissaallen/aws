@@ -1,4 +1,4 @@
-## Architecting for the Cloud: Best Practices
+# Architecting for the Cloud: Best Practices
 **_Read the whitepaper._**
 
 ### Traditional Computing vs. Cloud Computing
@@ -12,9 +12,9 @@
 * Traditional Copmuting
   * Get a purchase order, purchase physical servers, 3-5 year contract, the servers would need to be racked, connected to the networking gear, must install the operating systems, etc.  
 
-### Design Principles
+## Design Principles
 
-#### Scalability
+### Scalability
 **Scale Up**
 * Increasing RAM or amount of CPU inside a virtual machine.
 **Scale Out**
@@ -36,11 +36,11 @@
       * Containers
       * Hybrid (containers and EC2 Instances)
 
-#### Infrastructure As Code
+### Infrastructure As Code
 _Disposable Resources Instead of Fixed Servers._	
 - CloudFormation
 
-#### Automation
+### Automation
 - Serverless Mangement and Deployment
 	- Using code pipeline, code deploy, etc.
 - Infrastructure Mangement and Deployment
@@ -58,7 +58,7 @@ _Disposable Resources Instead of Fixed Servers._
 		- WAF: Web Application Firewall
 		- Can automatically respond to someone doing something to your site (e.g., SQL Injection)
 
-#### Loose Coupling
+### Loose Coupling
 - Well Defined Interfaces
 	- Amazon API Gateway
 		- Allows you to create your own APIs and expose them to the internet
@@ -70,12 +70,12 @@ _Disposable Resources Instead of Fixed Servers._
 	- Graceful Failure in Practice
 		- Example: If you have an S3 website and a page doesn't exist, you have an error.hmtl page to tell the users there has been a failure. Additionally, you have a mechanism to report this back to your system administrators. 
 
-#### Services Not Servers
+### Services Not Servers
 _Use serverless services as much as possible so that servers do not have to be managed._
 
 "No server is easier to manage than no server." - Werner Vogels (CTO, Amazon)
 
-#### Databases
+## Databases
 Relational Databases (Aurora)
 * Scalability 
 * Will always have 6 copies of your data across 3+ availability zones
