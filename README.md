@@ -12,8 +12,8 @@ Each markdown file in _notes_ contains my notes on a particular AWS topic. These
 ```bash
 ├── README.md
 ├── amazon
-│   ├── AWS_Certified_Cloud_Practioner_Sample_Questions.pdf
-│   └── AWS_Certified_Cloud_Practitioner_Exam_Guide.pdf
+│   ├── AWS_Certified_Cloud_Practitioner_Exam_Guide.pdf
+│   └── AWS_Certified_Cloud_Practitioner_Sample_Questions.pdf
 ├── notes
 │   └── cloud-computing
 │       ├── Shared_Responsibility_Model.jpg
