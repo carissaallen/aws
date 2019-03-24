@@ -11,13 +11,22 @@ Each markdown file in _notes_ contains my notes on a particular AWS topic. These
 ## Tree
 ```bash
 ├── README.md
+├── amazon
+│   ├── AWS\ Certified\ Cloud\ Practioner_Sample\ Questions_v1.1_FINAL.PDF
+│   └── AWS\ Certified\ Cloud\ Practitioner_Exam_Guide_v1.4_FINAL.PDF
 ├── notes
 │   └── cloud-computing
 │       ├── Shared_Responsibility_Model.jpg
+│       ├── application-integration.md
+│       ├── architecting-for-the-cloud.md
 │       ├── billing-pricing.md
 │       ├── cloud-concepts.md
+│       ├── databases.md
+│       ├── exam-simulator.md
+│       ├── load-balancers.md
 │       ├── quiz.md
-│       └── security.md
+│       ├── security.md
+│       └── storage.md
 └── whitepapers
     ├── AWS_Cloud_Best_Practices.pdf
     └── AWS_Pricing_Overview.pdf
