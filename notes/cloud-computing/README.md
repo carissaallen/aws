@@ -6,4 +6,4 @@ The AWS Cloud Practitioner exam enables individuals with an overall understandin
 knowledge with an industry-recognized credential. It provides individuals in a larger variety of cloud and technology 
 roles with a way to validate their AWS Cloud knowledge and enhance their professional credibility.
 
-_This repository contains all the notes and resources used to pass the AWS Cloud Practitioner Exam in March 2019._
+_This repository contains all the notes and resources used to pass the AWS Cloud Practitioner Exam (on the first attempt) in March 2019. Please feel free to use for your own reference._
